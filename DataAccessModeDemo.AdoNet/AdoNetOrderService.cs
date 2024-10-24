@@ -46,6 +46,7 @@ namespace DataAccessModeDemo.AdoNet
             
             // Object Realtional Mapper
 
+            // Mapping
             while (dataReader.Read())
             {
                 var newOrder = new OrderDto();
