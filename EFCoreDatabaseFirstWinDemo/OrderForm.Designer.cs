@@ -31,13 +31,15 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             detailsDataGridView = new DataGridView();
+            ColumnProductName = new DataGridViewTextBoxColumn();
+            ColumnUnitPrice = new DataGridViewTextBoxColumn();
+            ColumnQuantity = new DataGridViewTextBoxColumn();
             employeeComboBox = new ComboBox();
             customerComboBox = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            ColumnProductName = new DataGridViewTextBoxColumn();
-            ColumnUnitPrice = new DataGridViewTextBoxColumn();
-            ColumnQuantity = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)detailsDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -49,6 +51,29 @@
             detailsDataGridView.Name = "detailsDataGridView";
             detailsDataGridView.Size = new Size(614, 291);
             detailsDataGridView.TabIndex = 0;
+            // 
+            // ColumnProductName
+            // 
+            ColumnProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnProductName.DataPropertyName = "ProductName";
+            ColumnProductName.HeaderText = "Product name";
+            ColumnProductName.Name = "ColumnProductName";
+            // 
+            // ColumnUnitPrice
+            // 
+            ColumnUnitPrice.DataPropertyName = "UnitPrice";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle1;
+            ColumnUnitPrice.HeaderText = "Unit price";
+            ColumnUnitPrice.Name = "ColumnUnitPrice";
+            // 
+            // ColumnQuantity
+            // 
+            ColumnQuantity.DataPropertyName = "Quantity";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ColumnQuantity.DefaultCellStyle = dataGridViewCellStyle2;
+            ColumnQuantity.HeaderText = "Quantity";
+            ColumnQuantity.Name = "ColumnQuantity";
             // 
             // employeeComboBox
             // 
@@ -84,34 +109,33 @@
             label2.TabIndex = 4;
             label2.Text = "Customer";
             // 
-            // ColumnProductName
+            // button1
             // 
-            ColumnProductName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ColumnProductName.DataPropertyName = "ProductName";
-            ColumnProductName.HeaderText = "Product name";
-            ColumnProductName.Name = "ColumnProductName";
+            button1.Location = new Point(525, 528);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 5;
+            button1.Text = "Save";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // ColumnUnitPrice
+            // button2
             // 
-            ColumnUnitPrice.DataPropertyName = "UnitPrice";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
-            ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle1;
-            ColumnUnitPrice.HeaderText = "Unit price";
-            ColumnUnitPrice.Name = "ColumnUnitPrice";
-            // 
-            // ColumnQuantity
-            // 
-            ColumnQuantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            ColumnQuantity.DefaultCellStyle = dataGridViewCellStyle2;
-            ColumnQuantity.HeaderText = "Quantity";
-            ColumnQuantity.Name = "ColumnQuantity";
+            button2.Location = new Point(31, 162);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 6;
+            button2.Text = "Add Item";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // OrderForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(660, 567);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(customerComboBox);
@@ -134,5 +158,7 @@
         private DataGridViewTextBoxColumn ColumnProductName;
         private DataGridViewTextBoxColumn ColumnUnitPrice;
         private DataGridViewTextBoxColumn ColumnQuantity;
+        private Button button1;
+        private Button button2;
     }
 }
