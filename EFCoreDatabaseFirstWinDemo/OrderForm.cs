@@ -1,5 +1,6 @@
 ﻿using EFCoreDatabaseFirstWinDemo.Data;
 using EFCoreDatabaseFirstWinDemo.Models;
+using EFCoreDatabaseFirstWinDemo.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,16 +17,16 @@ namespace EFCoreDatabaseFirstWinDemo
     public partial class OrderForm : Form
     {
         private readonly NorthwindDbConext northwindDbConext;
-
-
+        private readonly IOrderService _orderService;
         BindingList<OrderDetailViewModel> _orderDetails = new BindingList<OrderDetailViewModel>();
 
-        public OrderForm(NorthwindDbConext northwindDbConext)
+        public OrderForm(NorthwindDbConext northwindDbConext, IOrderService orderService)
         {
             InitializeComponent();
 
             detailsDataGridView.AutoGenerateColumns = false;
             this.northwindDbConext = northwindDbConext;
+            this._orderService = orderService;
             Load += OrderForm_Load;
 
 
@@ -58,7 +59,6 @@ namespace EFCoreDatabaseFirstWinDemo
         private void button1_Click(object sender, EventArgs e)
         {
             // Fill Order
-
             var order = new Order();
             order.EmployeeId = int.Parse(employeeComboBox.SelectedValue.ToString());
             order.CustomerId = customerComboBox.SelectedValue.ToString();
@@ -69,18 +69,13 @@ namespace EFCoreDatabaseFirstWinDemo
             // Add Details
             foreach (var item in _orderDetails)
             {
-                //order.OrderDetails.Add(new OrderDetail
-                //{
-                //    ProductId = item.ProductId,
-                //    Quantity = item.Quantity,
-                //    UnitPrice = item.UnitPrice,
-                //});
 
                 order.OrderDetails.Add(item.OrderDetail);
             }
+                
+            _orderService.SaveOrder(order);
 
-            northwindDbConext.Orders.Add(order);
-            northwindDbConext.SaveChanges();
+            MessageBox.Show("Order saved!");
         }
 
         private void button2_Click(object sender, EventArgs e)

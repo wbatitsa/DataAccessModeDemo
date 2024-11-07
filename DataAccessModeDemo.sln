@@ -13,9 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6DataAccessDemo", "EF6Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreCodeFirstDemo", "EFCoreCodeFirstDemo\EFCoreCodeFirstDemo.csproj", "{9AEA667F-8775-4EF5-829A-DBDBD55F78D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDatabaseFirstDemo", "EFCoreDatabaseFirstDemo\EFCoreDatabaseFirstDemo.csproj", "{E7489F2E-8A4B-402C-A12B-F9F0709D6A5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDatabaseFirstDemo", "EFCoreDatabaseFirstDemo\EFCoreDatabaseFirstDemo.csproj", "{E7489F2E-8A4B-402C-A12B-F9F0709D6A5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDatabaseFirstWinDemo", "EFCoreDatabaseFirstWinDemo\EFCoreDatabaseFirstWinDemo.csproj", "{E0A91919-3DCA-4576-8EF4-8C89D20BC9BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDatabaseFirstWinDemo", "EFCoreDatabaseFirstWinDemo\EFCoreDatabaseFirstWinDemo.csproj", "{E0A91919-3DCA-4576-8EF4-8C89D20BC9BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCorePowerToolsDemo", "EFCorePowerToolsDemo\EFCorePowerToolsDemo.csproj", "{14CA95F9-AC2A-472F-8920-87C2FA65FE07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{E0A91919-3DCA-4576-8EF4-8C89D20BC9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0A91919-3DCA-4576-8EF4-8C89D20BC9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0A91919-3DCA-4576-8EF4-8C89D20BC9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14CA95F9-AC2A-472F-8920-87C2FA65FE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CA95F9-AC2A-472F-8920-87C2FA65FE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CA95F9-AC2A-472F-8920-87C2FA65FE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CA95F9-AC2A-472F-8920-87C2FA65FE07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

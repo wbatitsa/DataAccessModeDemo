@@ -1,4 +1,5 @@
 using EFCoreDatabaseFirstWinDemo.Data;
+using EFCoreDatabaseFirstWinDemo.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +23,8 @@ namespace EFCoreDatabaseFirstWinDemo
             });
             serviceCollection.AddTransient<OrderForm>();
             serviceCollection.AddTransient<MainForm>();
+            serviceCollection.AddScoped<ISqlConnectionFactory, SqlConnectionFactory>();
+            serviceCollection.AddScoped<IOrderService, SqlKataOrderService>();
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
             ApplicationConfiguration.Initialize();
